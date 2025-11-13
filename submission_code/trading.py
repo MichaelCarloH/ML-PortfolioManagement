@@ -30,10 +30,6 @@ This module can be generated dynamically inside a notebook to comply with
 and avoid side effects so they can be reused across experiments.
 """
 
-import pandas
-import numpy as np
-import matplotlib.pyplot as plt
-
 def split(df, frac=0.8):
     """Return train/test index splits by fraction, preserving order.
 
