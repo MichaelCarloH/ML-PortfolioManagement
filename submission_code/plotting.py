@@ -173,7 +173,7 @@ def plot_candles_and_trades(
     # Plot trades if requested
     if show_trades and signal_col in data.columns:
         sig = data[signal_col]
-        pnl = sig * data.get("intraday_ret", 0)  # assumes intraday_ret exists
+        pnl = sig * data.get("Daily_Return", 0)  # assumes Daily_Return exists
         mk_long = data[sig == 1]
         mk_short = data[sig == -1]
 

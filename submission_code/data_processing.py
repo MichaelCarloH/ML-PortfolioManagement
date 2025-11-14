@@ -187,7 +187,7 @@ def load_all_csvs(
             }).reset_index()
 
             merged_df["Title"] = title
-            merged_df = merged_df.rename(columns={date_col: "Date"})
+            merged_df = merged_fed_sp_bps_MA_df.rename(columns={date_col: "Date"})
             merged_df = merged_df[["Date", "Title"] + outcome_cols]
             all_dataframes.append(merged_df)
             log(f"  ✓ {len(merged_df)} unique dates")
