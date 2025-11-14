@@ -373,13 +373,14 @@ def load_sp500_data(
     spx["Price_MA_50"] = spx["Close"].rolling(50).mean()
     spx["Volatility_20"] = spx["Daily_Return"].rolling(20).std()
 
-    cols_to_keep = [
-        "Open", "High", "Low", "Close", "Volume",
-        "Daily_Return", "Log_Return",
-        "High_Low_Range", "Open_Close_Range",
-        "Volume_MA_20", "Volume_Ratio",
-        "Price_MA_20", "Price_MA_50", "Volatility_20",
-    ]
+    cols_to_keep = ["Daily_Return", "Open", "Close"]
+    # cols_to_keep = [
+    #     "Open", "High", "Low", "Close", "Volume",
+    #     "Daily_Return", "Log_Return",
+    #     "High_Low_Range", "Open_Close_Range",
+    #     "Volume_MA_20", "Volume_Ratio",
+    #     "Price_MA_20", "Price_MA_50", "Volatility_20",
+    # ]
     available = [c for c in cols_to_keep if c in spx.columns]
 
     daily = spx[available].dropna().copy()

@@ -66,7 +66,7 @@ def sharpe(series):
     return (np.sqrt(252) * s.mean() / (s.std() + 1e-12)) if len(s) else np.nan
 
 # Backtest helper
-def backtest_slice(df, idx, sig_series_or_name, ret_col='intraday_ret'):
+def backtest_slice(df, idx, sig_series_or_name, ret_col='Daily_Return'):
     """Compute strategy and cumulative returns over a slice of ``df``.
 
     Parameters
